@@ -1,223 +1,95 @@
-# Pi Visual Builder — PiRC4: Visual App Builder Standard
+# Pi Visual Builder — PiRC4: The Ultimate No-Code Ecosystem for Pi
 
-> **Advanced Mode for Pi App Studio** — Visual drag-and-drop builder for React/TypeScript web apps that run natively inside Pi Browser.
+> **Bubble.io Ecosystem Meets Pi Network AI** — A full-scale visual development platform with a native AI Agent. Build complex, database-driven web apps with visual workflows, all running natively inside the Pi Browser.
 
-## The Problem
+## 🚀 The Vision: Beyond AI Generation
 
-Pi App Studio (launched June 2025) enables no-code app creation via AI prompts and templates. However, it has limitations:
+While **Pi App Studio** (launched June 2025) pioneered AI-based app creation, **Pi Visual Builder** introduces the **"Visual & AI Hybrid"** era. It provides a professional-grade development environment that combines the ease of AI with the power of a full no-code engine like Bubble.io.
 
-| Limitation | Impact |
-|-----------|--------|
-| **AI decides the layout** | Developers can't fine-tune UI pixel-by-pixel |
-| **No visual logic editor** | Complex app behavior requires prompt engineering, not direct control |
-| **No code access** | Can't view or edit the generated code |
-| **Template-only** | Can't build custom components or reuse logic patterns |
-| **Beginner ceiling** | Advanced developers hit a wall quickly |
+## 🤖 Integrated Pi AI Agent
+Following the latest industry standards (as seen in the provided reference images), Pi Visual Builder features a **context-aware AI Agent**:
 
-## The Solution: Pi Visual Builder
+- **Natural Language Development**: "Build a form so users can apply to jobs" → AI generates the UI, database schema, and workflows simultaneously.
+- **Visual Reworking**: "Make the header modern and add a gradient background" → AI updates the Design tab in real-time.
+- **Workflow Automation**: "When the user clicks apply, create a record and notify the employer" → AI builds the logic chain in the Workflow tab.
+- **Real-time Debugging**: AI identifies and fixes issues in your logic or responsive design.
 
-A **visual app development environment** that complements Pi App Studio with an Advanced Mode:
+## 🏛️ The Five Tabs of Power
 
-### 1. Visual UI Designer (Drag-and-Drop)
-- Component palette: buttons, lists, images, maps, charts, webviews
-- Property inspector: size, color, font, margin, padding, animations
-- Responsive preview: phone, tablet, Pi Browser
-- Custom themes with Pi Design System tokens
+### 1. Design Tab (Visual UI)
+- **Pixel-Perfect Canvas**: Drag-and-drop elements with absolute or flexbox positioning.
+- **Elements Tree**: Comprehensive list of components (Basic, Visual, Layouts, Pi-Native).
+- **Responsive Engine**: Visual breakpoints to ensure your app looks great on every Pioneer's device.
+- **Property Editor**: Full control over fonts, colors, animations, and conditional states.
 
-### 2. Logic Blocks (Visual Programming)
-- Event-driven blocks: `onTap`, `onLoad`, `onSwipe`, `onTimer`
-- Logic blocks: `if/else`, `loop`, `switch`, `try/catch`
-- Data blocks: variables, lists, maps, API calls
-- Pi-specific blocks: `sendPi`, `verifyPioneer`, `getProfile`, `createEscrow`
-- Custom block creation with reusable logic
+### 2. Workflow Tab (Visual Logic)
+- **Bubble-style Event Loops**: "When [Trigger] → Do [Action 1] → Do [Action 2]..."
+- **Complex Branching**: Visual if/else paths and custom reusable workflows.
+- **Pi-Native Triggers**: `onPaymentSuccess`, `onAuth`, `onDisputeRuling`, `onMilestoneReached`.
+- **Background Workflows**: Scheduled tasks and API-triggered logic.
 
-### 3. Code View & Edit
-- **React/TypeScript** code generated from visual design
-- **HTML/CSS** mode for direct markup editing
-- Switch between Visual ↔ Code view at any time
-- All apps run as **web apps inside Pi Browser** (no external deployment)
-- Pi SDK JavaScript library auto-imported
+### 3. Data Tab (Built-in Database)
+- **Visual Schema Builder**: Define Data Types (User, Product, Job, Application).
+- **Relational Data**: One-to-many and many-to-many linking (e.g., Job linked to Employer).
+- **Privacy Rules**: Field-level security (e.g., "Only the applicant can see their social security number").
+- **PiDCTP Sync**: On-chain reputation and escrow states are auto-mapped to database records.
 
-### 4. Component Marketplace
-- Publish custom components
-- Import community components
-- Pi-verified component badges
-- Monetization with Pi payments
+### 4. API Tab (Connector)
+- **Zero-Code API Connector**: Connect to any external REST or GraphQL service.
+- **Native Pi SDK integration**: Visual blocks for all Pi Network core functions.
+- **Webhooks**: Let external systems trigger workflows in your Pi app.
 
-## Architecture
+### 5. Plugins Tab (Extensibility)
+- **Marketplace**: Install community-built components and logic modules.
+- **Monetization**: Authors earn Pi for their premium plugins.
 
-```
-┌─────────────────────────────────────────┐
-│           Pi Visual Builder             │
-├──────────┬──────────┬───────────────────┤
-│  UI      │  Logic   │  Code             │
-│ Designer │  Blocks  │  Generator        │
-│          │          │                   │
-│ ┌──────┐ │ ┌──────┐ │ ┌───────────────┐ │
-│ │Canvas│ │ │Event │ │ │ React/TS Code  │ │
-│ │      │ │ │Blocks│ │ │ HTML/CSS View  │ │
-│ │Props │ │ │Logic │ │ │ Pi Browser Pkg │ │
-│ │Panel │ │ │Blocks│ │ └───────────────┘ │
-│ └──────┘ │ └──────┘ │                   │
-├──────────┴──────────┴───────────────────┤
-│         Pi SDK Integration              │
-│  (Auth, Payments, Escrow, Reputation)   │
-├─────────────────────────────────────────┤
-│         Component Marketplace           │
-└─────────────────────────────────────────┘
-```
-
-## Pi-Specific Blocks
-
-| Block | Category | Description |
-|-------|----------|-------------|
-| `pioneer.login()` | Auth | Pi authentication flow |
-| `pioneer.getProfile()` | Auth | Get Pioneer profile data |
-| `pi.send(amount, recipient)` | Payment | Send Pi payment |
-| `pi.createEscrow(buyer, seller, amount)` | Commerce | Create PiDCTP escrow |
-| `pi.verifyMerchant(address)` | Commerce | Check merchant status |
-| `pi.getReputation(address)` | Trust | Get reputation score |
-| `pi.openDispute(escrowId)` | Trust | Open dispute |
-| `pi.earnLoyalty(pioneer, action)` | Rewards | Award loyalty points |
-| `pi.subscribe(planId)` | Subscription | PiRC2 subscription |
-
-## Component System
-
-### Built-in Components
-- **Layout**: Column, Row, Stack, Grid, ScrollView, TabView
-- **Display**: Text, Image, Icon, Badge, Avatar, Card, Chart
-- **Input**: TextField, TextArea, Switch, Slider, DatePicker, Picker
-- **Action**: Button, IconButton, FloatingActionButton, Chip
-- **Navigation**: NavBar, Drawer, BottomSheet, PageView
-- **Pi-specific**: PioneerCard, PiPayButton, EscrowStatus, ReputationBadge, MerchantProfile
-
-### Custom Components
-```json
-{
-  "name": "ProductCard",
-  "version": "1.0.0",
-  "author": "pioneer_address",
-  "props": {
-    "title": "String",
-    "price": "Number",
-    "image": "Uri",
-    "onBuy": "Event"
-  },
-  "template": "ui_layout.json",
-  "logic": "logic_blocks.json",
-  "exports": ["react", "html"]
-}
-```
-
-## File Format
-
-### Project Structure
-```
-my-pi-app/
-├── manifest.json          # App metadata & permissions
-├── theme.json             # Pi Design System tokens
-├── screens/
-│   ├── home.ui.json       # Visual layout
-│   ├── home.logic.json    # Logic blocks
-│   └── product.ui.json
-├── components/
-│   └── ProductCard.json   # Custom component
-├── assets/
-│   ├── images/
-│   └── fonts/
-└── dist/
-    └── pibrowser/         # Pi Browser web app package
-```
-
-### UI Layout Format (`.ui.json`)
-```json
-{
-  "type": "Screen",
-  "id": "home",
-  "children": [
-    {
-      "type": "Column",
-      "children": [
-        { "type": "Text", "props": { "value": "Welcome, Pioneer!", "style": "headline" } },
-        { "type": "PiPayButton", "props": { "amount": 10, "recipient": "${seller}" } }
-      ]
-    }
-  ]
-}
-```
-
-### Logic Block Format (`.logic.json`)
-```json
-{
-  "events": [
-    {
-      "trigger": "onTap",
-      "target": "PiPayButton",
-      "actions": [
-        { "type": "call", "method": "pi.createEscrow", "args": { "buyer": "${pioneer}", "seller": "${seller}", "amount": 10 } },
-        { "type": "navigate", "screen": "escrow_status" }
-      ]
-    }
-  ]
-}
-```
-
-## Integration with PiDCTP (PiRC3)
-
-Pi Visual Builder provides **visual blocks** for all PiDCTP modules:
-
-| PiDCTP Module | Visual Blocks Available |
-|---------------|------------------------|
-| Escrow | Create, Fund, Confirm, Cancel, Milestone, Group |
-| Reputation | View Score, Award Badge, Create Attestation |
-| Dispute | Open, Submit Evidence, Vote, View Ruling |
-| Merchant | Apply, Verify, View Profile |
-| Loyalty | Earn Points, Redeem, View Tier |
-
-This means **any Pioneer** can build a commerce app with escrow protection and reputation — without writing a single line of code.
-
-## Roadmap
-
-| Phase | Feature | Status |
-|-------|---------|--------|
-| **v0.1** | UI Designer + basic components | Proposed |
-| **v0.2** | Logic blocks + event system | Proposed |
-| **v0.3** | Pi SDK blocks + PiDCTP integration | Proposed |
-| **v0.4** | Code view (React/TS + HTML/CSS) | Proposed |
-| **v0.5** | Component marketplace | Proposed |
-| **v1.0** | Full integration with Pi App Studio as Advanced Mode | Proposed |
-
-## Technical Stack
-
-- **Editor**: React + TypeScript (runs inside Pi Browser)
-- **App Framework**: React 18 + TypeScript (generated apps)
-- **Styling**: CSS Modules + Pi Design System tokens
-- **Code Generation**: AST-based React/TS template engine
-- **HTML Mode**: Direct HTML/CSS editing for simple pages
-- **Runtime**: Pi Browser (all apps are web apps)
-- **Pi SDK**: `@pi/sdk` JavaScript library (auth, payments, escrow, reputation)
-- **Build**: Vite (fast HMR inside Pi Browser)
-- **Storage**: Pi Cloud (project hosting within ecosystem)
-
-## Quick Start (Concept)
+## 🏗️ Technical Architecture
 
 ```
-1. Open Pi Visual Builder in Pi Browser
-2. Drag components onto canvas
-3. Connect logic blocks visually
-4. Add Pi-specific blocks (payments, escrow, reputation)
-5. Preview in device simulator
-6. Switch to Code view to edit React/TS or HTML directly
-7. Build as Pi Browser web app
-8. Publish to Pi App Studio ecosystem
+┌─────────────────────────────────────────────────────────────┐
+│                   PI VISUAL BUILDER (VB)                    │
+├─────────────────────────────────────────────────────────────┤
+│ 🤖 PI AI AGENT (Orchestrator & Copilot)                     │
+├──────────┬───────────┬───────────┬───────────┬──────────────┤
+│  DESIGN  │ WORKFLOW  │   DATA    │    API    │   PLUGINS    │
+│  CANVAS  │  ENGINE   │  MANAGER  │ CONNECTOR │  MARKETPLACE │
+└──────────┴─────┬─────┴─────┬─────┴─────┬─────┴──────┬───────┘
+                 │           │           │            │
+      ┌──────────▼───────────▼───────────▼────────────▼───┐
+      │               PI SDK & PiDCTP LAYER               │
+      │   (Auth, Payments, Escrow, Reputation, Dispute)   │
+      └──────────────────────────┬────────────────────────┘
+                                 │
+                 ┌───────────────▼───────────────┐
+                 │       PI BROWSER RUNTIME      │
+                 │ (React/TS + HTML/CSS Web App) │
+                 └───────────────────────────────┘
 ```
 
-## License
+## 🔗 Deep PiDCTP (PiRC3) Integration
 
-MIT License
+Pi Visual Builder is built to be the "Frontend" for the **PiRC3 protocol**:
 
-## Links
+| Visual Workflow Action | Underlying PiDCTP Logic |
+|-------------------------|--------------------------|
+| `When "Apply" clicked` | Create Job Application record in Data Tab |
+| `Do "Secure Payment"` | **Pi.Escrow.create()** (Milestone-based) |
+| `Verify Applicant` | **Pi.Reputation.getEffectiveScore()** |
+| `Award Work Badge` | **Pi.Reputation.awardBadge(JobVeteran)** |
+| `Open Dispute` | **Pi.Dispute.open()** with evidence upload |
 
-- **PiRC3 (PiDCTP)**: https://github.com/PiNetwork/PiRC/pull/378
-- **Pi App Studio**: Available in Pi Browser
-- **Pi Developer Guide**: https://pi-apps.github.io/community-developer-guide/
+## 📅 Roadmap
+
+- **Phase 1: Visual Foundation** (UI Canvas + Basic Workflows).
+- **Phase 2: Data Intelligence** (Relational Database + Privacy Rules).
+- **Phase 3: AI Integration** (Pi AI Agent for natural language app building).
+- **Phase 4: Global Ecosystem** (Plugin Marketplace + Pi App Studio Sync).
+
+## 📄 License
+MIT License - 2026 Pi Network Community Contribution.
+
+---
+
+### Links
+- **PiRC3 (PiDCTP)**: [PR #378](https://github.com/PiNetwork/PiRC/pull/378)
+- **Community Discussion**: [Issue #381](https://github.com/PiNetwork/PiRC/issues/381)
