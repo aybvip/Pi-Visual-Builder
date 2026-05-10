@@ -1,6 +1,6 @@
 # Pi Visual Builder — PiRC4: The Ultimate AI-Driven No-Code Platform
 
-> **The Power of Bubble.io + The Intelligence of Pi AI** — A next-generation visual development platform with a native **AI Agent (Orchestrator)**. Build complex, relational database web apps with step-by-step visual workflows, all powered by natural language prompts.
+> **The Power of Visual Development + The Intelligence of Pi AI** — A next-generation visual development platform with a native **AI Agent (Orchestrator)**. Build complex, relational database web apps with step-by-step visual workflows, all powered by natural language prompts.
 
 ## 📚 Documentation Index
 
@@ -11,7 +11,7 @@
 | 3 | [Code Generation](docs/3-code-generation.md) | React/TS + HTML/CSS output, Pi SDK API, build pipeline |
 | 4 | [Component Marketplace](docs/4-marketplace.md) | Publishing, monetization, verification, discovery |
 | 5 | [Example Apps](docs/5-examples.md) | 5 complete app examples (e-commerce, services, community, loyalty, HTML) |
-| 6 | [Editor UI Layout](docs/6-editor-ui-layout.md) | Bubble.io-style editor: canvas, property editor, AI assistant panel, workflow canvas, data tab, styles tab |
+| 6 | [Editor UI Layout](docs/6-editor-ui-layout.md) | Professional editor: canvas, property editor, AI assistant panel, workflow canvas, data tab, styles tab |
 
 ## 🤖 The Pi AI Agent (BETA)
 
