@@ -13,6 +13,14 @@
 | 5 | [Example Apps](docs/5-examples.md) | 5 complete app examples (e-commerce, services, community, loyalty, HTML) |
 | 6 | [Editor UI Layout](docs/6-editor-ui-layout.md) | Professional editor: canvas, property editor, AI assistant panel, workflow canvas, data tab, styles tab |
 
+## 📱 Interactive Mockups (Mobile-Optimized)
+
+| Mockup | Preview |
+|--------|---------|
+| [🎨 Design Tab](mockups/1-design-tab.html) | Visual canvas with elements tree, property editor, and AI assistant |
+| [⚡ Workflow Tab](mockups/2-workflow-tab.html) | Step-by-step logic chains with Pi payment & escrow actions |
+| [🗄️ Data Tab](mockups/3-data-tab.html) | Relational database with PiDCTP-linked fields and privacy rules |
+
 ## 🤖 The Pi AI Agent (BETA)
 
 The **Pi AI Agent** is the heart of the platform. It's not just a chatbot; it's an **Active Orchestrator** that performs actions across the environment:
