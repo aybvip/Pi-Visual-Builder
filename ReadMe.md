@@ -110,7 +110,7 @@ Pi Visual Builder turns complex smart contract calls into simple visual steps:
 
 ## 📄 License
 
-Pi Network Proprietary License — This project is the exclusive property of Pi Network. No person or entity may claim, copy, or distribute this project without explicit permission from Pi Network. See [LICENSE](LICENSE) for full terms.
+Idea & Proposal License — Original concept by **Ayoub (aybvip)**. Implementation rights belong exclusively to **Pi Network**. No other entity may claim, copy, or implement this idea. See [LICENSE](LICENSE) for full terms.
 
 ---
 
