@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pi Visual Builder — Design Tab</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+body { background: #1a1a2e; color: #e0e0e0; height: 100vh; overflow: hidden; }
+
+/* Top Bar */
+.topbar { display: flex; align-items: center; background: #16213e; height: 48px; border-bottom: 1px solid #2a2a4a; padding: 0 12px; gap: 4px; }
+.topbar .logo { width: 28px; height: 28px; background: #6B46F5; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 14px; color: white; margin-right: 8px; }
+.topbar .app-name { color: #fff; font-size: 14px; font-weight: 600; margin-right: 16px; }
+.tab { padding: 8px 16px; font-size: 13px; color: #888; cursor: pointer; border-radius: 6px 6px 0 0; border: none; background: none; }
+.tab.active { color: #fff; background: #6B46F5; }
+.tab:hover { color: #ccc; }
+.topbar-right { margin-left: auto; display: flex; gap: 8px; }
+.btn-preview { background: #48BB78; color: #fff; border: none; padding: 6px 14px; border-radius: 6px; font-size: 12px; cursor: pointer; font-weight: 600; }
+.btn-deploy { background: #6B46F5; color: #fff; border: none; padding: 6px 14px; border-radius: 6px; font-size: 12px; cursor: pointer; font-weight: 600; }
+
+/* Main Layout */
+.main { display: flex; height: calc(100vh - 48px - 120px); }
+
+/* Left Panel */
+.left-panel { width: 220px; background: #16213e; border-right: 1px solid #2a2a4a; overflow-y: auto; }
+.panel-title { font-size: 11px; text-transform: uppercase; color: #888; padding: 10px 12px 6px; letter-spacing: 1px; }
+.tree-item { display: flex; align-items: center; padding: 5px 12px; font-size: 12px; cursor: pointer; gap: 6px; }
+.tree-item:hover { background: #2a2a4a; }
+.tree-item.selected { background: #6B46F5; color: #fff; }
+.tree-item .icon { font-size: 10px; opacity: 0.6; }
+.tree-item .indent { width: 16px; }
+.add-btn { display: flex; align-items: center; gap: 4px; padding: 8px 12px; font-size: 12px; color: #6B46F5; cursor: pointer; }
+.add-btn:hover { background: #2a2a4a; }
+
+/* Canvas */
+.canvas-area { flex: 1; display: flex; flex-direction: column; }
+.canvas-toolbar { display: flex; align-items: center; padding: 6px 12px; gap: 8px; background: #1a1a2e; border-bottom: 1px solid #2a2a4a; }
+.device-btn { background: none; border: 1px solid #2a2a4a; color: #888; padding: 4px 8px; border-radius: 4px; font-size: 11px; cursor: pointer; }
+.device-btn.active { border-color: #6B46F5; color: #6B46F5; }
+.canvas { flex: 1; display: flex; justify-content: center; align-items: flex-start; padding: 20px; overflow-y: auto; }
+.phone-frame { width: 375px; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.4); min-height: 600px; }
+.phone-header { background: #6B46F5; padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; }
+.phone-header h1 { color: #fff; font-size: 16px; font-weight: 600; }
+.phone-header .cart { color: #fff; font-size: 14px; }
+.phone-body { padding: 16px; }
+.hero-img { width: 100%; height: 160px; background: linear-gradient(135deg, #6B46F5, #9F7AEA); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 40px; margin-bottom: 16px; }
+.product-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.product-card { background: #f7f7fc; border-radius: 10px; padding: 10px; }
+.product-img { width: 100%; height: 80px; background: #e0d8f5; border-radius: 8px; margin-bottom: 8px; display: flex; align-items: center; justify-content: center; font-size: 24px; }
+.product-name { font-size: 12px; color: #333; font-weight: 600; }
+.product-price { font-size: 11px; color: #6B46F5; margin-top: 2px; }
+.product-badge { display: inline-block; background: #FFD700; color: #333; font-size: 9px; padding: 2px 6px; border-radius: 4px; font-weight: 600; margin-top: 4px; }
+.buy-btn { width: 100%; background: #6B46F5; color: #fff; border: none; padding: 6px; border-radius: 6px; font-size: 11px; font-weight: 600; margin-top: 6px; cursor: pointer; }
+
+/* Right Panel */
+.right-panel { width: 260px; background: #16213e; border-left: 1px solid #2a2a4a; overflow-y: auto; }
+.prop-section { border-bottom: 1px solid #2a2a4a; padding: 10px 12px; }
+.prop-section-title { font-size: 11px; text-transform: uppercase; color: #888; margin-bottom: 8px; letter-spacing: 1px; }
+.prop-row { display: flex; align-items: center; margin-bottom: 6px; gap: 8px; }
+.prop-label { font-size: 11px; color: #aaa; width: 60px; }
+.prop-input { flex: 1; background: #2a2a4a; border: 1px solid #3a3a5a; color: #fff; padding: 4px 8px; border-radius: 4px; font-size: 11px; }
+.prop-input:focus { border-color: #6B46F5; outline: none; }
+.prop-color { width: 24px; height: 24px; border-radius: 4px; border: 2px solid #3a3a5a; cursor: pointer; }
+.cond-item { background: #2a2a4a; border-radius: 6px; padding: 8px; margin-bottom: 6px; font-size: 11px; }
+.cond-item .cond-label { color: #6B46F5; font-weight: 600; margin-bottom: 4px; }
+
+/* AI Bar */
+.ai-bar { height: 120px; background: #16213e; border-top: 1px solid #2a2a4a; display: flex; flex-direction: column; }
+.ai-header { display: flex; align-items: center; padding: 8px 12px; gap: 8px; border-bottom: 1px solid #2a2a4a; }
+.ai-avatar { width: 24px; height: 24px; background: #6B46F5; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; }
+.ai-name { font-size: 12px; font-weight: 600; color: #fff; }
+.ai-status { font-size: 10px; color: #48BB78; margin-left: 8px; }
+.ai-messages { flex: 1; padding: 8px 12px; overflow-y: auto; }
+.ai-msg { font-size: 11px; margin-bottom: 6px; line-height: 1.4; }
+.ai-msg.bot { color: #9F7AEA; }
+.ai-msg.user { color: #48BB78; text-align: right; }
+.ai-input-row { display: flex; padding: 8px 12px; gap: 8px; }
+.ai-input { flex: 1; background: #2a2a4a; border: 1px solid #3a3a5a; color: #fff; padding: 6px 10px; border-radius: 8px; font-size: 12px; }
+.ai-input:focus { border-color: #6B46F5; outline: none; }
+.ai-send { background: #6B46F5; color: #fff; border: none; padding: 6px 12px; border-radius: 8px; font-size: 12px; cursor: pointer; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="logo">π</div>
+  <span class="app-name">Pi Coffee Shop ▾</span>
+  <button class="tab active">🎨 Design</button>
+  <button class="tab">⚡ Workflow</button>
+  <button class="tab">🗄️ Data</button>
+  <button class="tab">🎭 Styles</button>
+  <button class="tab">🧩 Plugins</button>
+  <div class="topbar-right">
+    <button class="btn-preview">▶ Preview</button>
+    <button class="btn-deploy">🚀 Deploy</button>
+  </div>
+</div>
+
+<div class="main">
+  <!-- Left Panel: Elements Tree -->
+  <div class="left-panel">
+    <div class="panel-title">Elements Tree</div>
+    <div class="tree-item"><span class="icon">▾</span> 📄 index</div>
+    <div class="tree-item"><span class="indent"></span><span class="icon">▾</span> 📦 Header</div>
+    <div class="tree-item"><span class="indent"></span><span class="indent"></span> 🖼️ Logo</div>
+    <div class="tree-item"><span class="indent"></span><span class="indent"></span> 🔗 NavLinks</div>
+    <div class="tree-item"><span class="indent"></span><span class="indent"></span> 🛒 CartBadge</div>
+    <div class="tree-item"><span class="indent"></span><span class="icon">▾</span> 📦 Body</div>
+    <div class="tree-item"><span class="indent"></span><span class="indent"></span> 🖼️ HeroImage</div>
+    <div class="tree-item selected"><span class="indent"></span><span class="indent"></span><span class="icon">▾</span> 🔄 ProductGrid</div>
+    <div class="tree-item"><span class="indent"></span><span class="indent"></span><span class="indent"></span> 📦 ProductCard</div>
+    <div class="tree-item"><span class="indent"></span><span class="indent"></span><span class="indent"></span><span class="indent"></span> 🖼️ Image</div>
+    <div class="tree-item"><span class="indent"></span><span class="indent"></span><span class="indent"></span><span class="indent"></span> 📝 Name</div>
+    <div class="tree-item"><span class="indent"></span><span class="indent"></span><span class="indent"></span><span class="indent"></span> 💰 Price</div>
+    <div class="tree-item"><span class="indent"></span><span class="indent"></span><span class="indent"></span><span class="indent"></span> 🏷️ Badge</div>
+    <div class="tree-item"><span class="indent"></span><span class="indent"></span><span class="indent"></span><span class="indent"></span> 🔘 BuyButton</div>
+    <div class="tree-item"><span class="indent"></span><span class="icon">▾</span> 📦 Footer</div>
+    <div class="add-btn">＋ New Element</div>
+  </div>
+
+  <!-- Canvas -->
+  <div class="canvas-area">
+    <div class="canvas-toolbar">
+      <button class="device-btn active">📱 Mobile</button>
+      <button class="device-btn">📱 Tablet</button>
+      <button class="device-btn">💻 Desktop</button>
+      <span style="margin-left:auto;font-size:11px;color:#888">↩ Undo  ↪ Redo  📐 Snap  📏 Guides</span>
+    </div>
+    <div class="canvas">
+      <div class="phone-frame">
+        <div class="phone-header">
+          <h1>☕ Pi Coffee</h1>
+          <span class="cart">🛒 2</span>
+        </div>
+        <div class="phone-body">
+          <div class="hero-img">☕</div>
+          <div class="product-grid">
+            <div class="product-card">
+              <div class="product-img">🫘</div>
+              <div class="product-name">Ethiopian Single</div>
+              <div class="product-price">5 Pi / bag</div>
+              <span class="product-badge">⭐ Gold Seller</span>
+              <button class="buy-btn">🛡️ Order with Escrow</button>
+            </div>
+            <div class="product-card">
+              <div class="product-img">☕</div>
+              <div class="product-name">Colombian Blend</div>
+              <div class="product-price">4 Pi / bag</div>
+              <span class="product-badge">⭐ Gold Seller</span>
+              <button class="buy-btn">🛡️ Order with Escrow</button>
+            </div>
+            <div class="product-card">
+              <div class="product-img">🫖</div>
+              <div class="product-name">Matcha Latte</div>
+              <div class="product-price">3 Pi</div>
+              <span class="product-badge">🥈 Silver</span>
+              <button class="buy-btn">🛡️ Order with Escrow</button>
+            </div>
+            <div class="product-card">
+              <div class="product-img">🍫</div>
+              <div class="product-name">Mocha Frappe</div>
+              <div class="product-price">4 Pi</div>
+              <span class="product-badge">⭐ Gold Seller</span>
+              <button class="buy-btn">🛡️ Order with Escrow</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right Panel: Property Editor -->
+  <div class="right-panel">
+    <div class="prop-section">
+      <div class="prop-section-title">Layout — ProductGrid</div>
+      <div class="prop-row"><span class="prop-label">Width</span><input class="prop-input" value="100%"></div>
+      <div class="prop-row"><span class="prop-label">Columns</span><input class="prop-input" value="2"></div>
+      <div class="prop-row"><span class="prop-label">Gap</span><input class="prop-input" value="12px"></div>
+      <div class="prop-row"><span class="prop-label">Padding</span><input class="prop-input" value="0 16px"></div>
+    </div>
+    <div class="prop-section">
+      <div class="prop-section-title">Appearance</div>
+      <div class="prop-row"><span class="prop-label">Background</span><div class="prop-color" style="background:#fff"></div><input class="prop-input" value="#FFFFFF"></div>
+      <div class="prop-row"><span class="prop-label">Border R.</span><input class="prop-input" value="0px"></div>
+      <div class="prop-row"><span class="prop-label">Shadow</span><input class="prop-input" value="none"></div>
+    </div>
+    <div class="prop-section">
+      <div class="prop-section-title">Conditional</div>
+      <div class="cond-item">
+        <div class="cond-label">When Product's stock = 0</div>
+        BuyButton → Hidden<br>Background → #FF0000
+      </div>
+      <div class="cond-item">
+        <div class="cond-label">When Product's stock &lt; 5</div>
+        Text → "Only {stock} left!"<br>Background → #FFA500
+      </div>
+    </div>
+    <div class="prop-section">
+      <div class="prop-section-title">Data Source</div>
+      <div class="prop-row"><span class="prop-label">Type</span><input class="prop-input" value="Product"></div>
+      <div class="prop-row"><span class="prop-label">Filter</span><input class="prop-input" value="stock > 0"></div>
+      <div class="prop-row"><span class="prop-label">Sort</span><input class="prop-input" value="price ASC"></div>
+    </div>
+  </div>
+</div>
+
+<!-- AI Bar -->
+<div class="ai-bar">
+  <div class="ai-header">
+    <div class="ai-avatar">🤖</div>
+    <span class="ai-name">Pi AI Assistant</span>
+    <span class="ai-status">● Online</span>
+  </div>
+  <div class="ai-messages">
+    <div class="ai-msg user">"Add a search bar at the top of the product grid"</div>
+    <div class="ai-msg bot">✅ Created TextInput "SearchBar" above ProductGrid<br>✅ Added workflow: When text changes → Filter ProductGrid by name<br>✅ Applied Pi Design System styling</div>
+  </div>
+  <div class="ai-input-row">
+    <input class="ai-input" placeholder="Type your request here...">
+    <button class="ai-send">➤</button>
+  </div>
+</div>
+
+</body>
+</html>
