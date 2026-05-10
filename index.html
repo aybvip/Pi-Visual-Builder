@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pi Visual Builder — AI-Driven No-Code Platform for Pi Network App Studio</title>
+<meta name="description" content="Pi Visual Builder is an AI-driven no-code platform for Pi App Studio. Build Pi Network apps with drag-and-drop, visual workflows, AI agent, and PiDCTP integration.">
+<meta name="keywords" content="Pi Network, Pi App Studio, no-code, visual builder, AI agent, PiDCTP, PiRC, PiRC4, drag and drop, app builder, Pi Browser, Soroban, Stellar, blockchain, decentralized commerce, escrow, reputation, Pi SDK">
+<meta name="author" content="Ayoub Boukadida (@viperco)">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Pi Visual Builder — AI-Driven No-Code Platform for Pi App Studio">
+<meta property="og:description" content="Build Pi Network apps visually with AI Agent, drag-and-drop canvas, workflows, database, and PiDCTP smart contract integration.">
+<meta property="og:image" content="https://aybvip.github.io/Pi-Visual-Builder/assets/preview.png">
+<meta property="og:url" content="https://aybvip.github.io/Pi-Visual-Builder">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pi Visual Builder — AI No-Code Platform for Pi Network">
+<meta name="twitter:description" content="Build Pi Network apps visually with AI Agent, drag-and-drop, workflows, and PiDCTP integration.">
+<meta name="twitter:image" content="https://aybvip.github.io/Pi-Visual-Builder/assets/preview.png">
+<link rel="canonical" href="https://aybvip.github.io/Pi-Visual-Builder">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
+body{background:#0f0f1a;color:#e0e0e0;min-height:100vh}
+.hero{background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%);padding:60px 20px;text-align:center}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(107,70,245,0.15);border:1px solid rgba(107,70,245,0.3);padding:6px 16px;border-radius:20px;font-size:12px;color:#9F7AEA;margin-bottom:20px}
+.hero-badge svg{width:14px;height:14px}
+.hero h1{font-size:32px;font-weight:700;color:#fff;margin-bottom:12px;line-height:1.2}
+.hero h1 span{background:linear-gradient(135deg,#6B46F5,#9F7AEA);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{font-size:16px;color:#a0a0c0;max-width:600px;margin:0 auto 30px;line-height:1.6}
+.hero-img{max-width:100%;border-radius:12px;border:1px solid #2a2a4a;margin:0 auto 30px;display:block;max-height:300px;object-fit:cover}
+.btn-group{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:12px 24px;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;cursor:pointer;border:none}
+.btn svg{width:16px;height:16px}
+.btn-primary{background:linear-gradient(135deg,#6B46F5,#9F7AEA);color:#fff}
+.btn-outline{background:transparent;border:1.5px solid #6B46F5;color:#9F7AEA}
+.section{padding:40px 20px;max-width:800px;margin:0 auto}
+.section h2{font-size:22px;font-weight:700;color:#fff;margin-bottom:20px;text-align:center}
+.features{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:40px}
+.feature{background:#16213e;border:1px solid #2a2a4a;border-radius:10px;padding:16px;text-align:center}
+.feature svg{width:28px;height:28px;color:#9F7AEA;margin-bottom:8px}
+.feature h3{font-size:13px;font-weight:600;color:#fff;margin-bottom:4px}
+.feature p{font-size:11px;color:#888;line-height:1.4}
+.mockups-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:40px}
+.mockup-card{background:#16213e;border:1px solid #2a2a4a;border-radius:10px;padding:16px;text-decoration:none;color:#e0e0e0;display:block;transition:border-color 0.2s}
+.mockup-card:hover{border-color:#6B46F5}
+.mockup-card svg{width:24px;height:24px;color:#9F7AEA;margin-bottom:8px}
+.mockup-card h3{font-size:14px;font-weight:600;color:#fff;margin-bottom:4px}
+.mockup-card p{font-size:11px;color:#888}
+.docs-list{list-style:none;margin-bottom:40px}
+.docs-list li{padding:10px 0;border-bottom:1px solid #1a1a3a;display:flex;align-items:center;gap:8px}
+.docs-list li svg{width:14px;height:14px;color:#6B46F5;flex-shrink:0}
+.docs-list a{color:#9F7AEA;text-decoration:none;font-size:13px}
+.docs-list a:hover{text-decoration:underline}
+.docs-list span{color:#888;font-size:11px;margin-left:auto}
+.footer{text-align:center;padding:30px 20px;border-top:1px solid #1a1a3a;font-size:11px;color:#555}
+.footer a{color:#9F7AEA;text-decoration:none}
+@media(max-width:400px){.features,.mockups-grid{grid-template-columns:1fr}.hero h1{font-size:24px}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge"><i data-lucide="sparkles"></i> AI-Driven No-Code Platform</div>
+  <h1>Pi <span>Visual Builder</span></h1>
+  <p>The Power of Visual Development + The Intelligence of Pi AI — Build professional Pi Network apps with drag-and-drop, AI agent, and PiDCTP integration.</p>
+  <img class="hero-img" src="assets/preview.png" alt="Pi Visual Builder Preview">
+  <div class="btn-group">
+    <a class="btn btn-primary" href="https://github.com/aybvip/Pi-Visual-Builder"><i data-lucide="github"></i> View on GitHub</a>
+    <a class="btn btn-outline" href="#mockups"><i data-lucide="smartphone"></i> Try Mockups</a>
+  </div>
+</div>
+
+<div class="section">
+  <h2>Five Core Pillars</h2>
+  <div class="features">
+    <div class="feature"><i data-lucide="palette"></i><h3>Design Tab</h3><p>Drag-and-drop canvas with Elements Tree and responsive engine</p></div>
+    <div class="feature"><i data-lucide="zap"></i><h3>Workflow Tab</h3><p>Step-by-step visual logic flows with Pi payment actions</p></div>
+    <div class="feature"><i data-lucide="database"></i><h3>Data Tab</h3><p>Relational database with PiDCTP-linked fields and privacy</p></div>
+    <div class="feature"><i data-lucide="paintbrush"></i><h3>Styles Tab</h3><p>Color/font variables, element styles, AI dark theme</p></div>
+    <div class="feature"><i data-lucide="puzzle"></i><h3>Plugins</h3><p>Monetized marketplace for community components</p></div>
+    <div class="feature"><i data-lucide="sparkles"></i><h3>AI Agent</h3><p>Build apps from natural language chat instantly</p></div>
+  </div>
+
+  <h2 id="mockups">Interactive Mockups</h2>
+  <div class="mockups-grid">
+    <a class="mockup-card" href="mockups/1-design-tab.html"><i data-lucide="palette"></i><h3>Design Tab</h3><p>Visual canvas with elements tree and AI assistant</p></a>
+    <a class="mockup-card" href="mockups/2-workflow-tab.html"><i data-lucide="zap"></i><h3>Workflow Tab</h3><p>Step-by-step logic chains with Pi payment actions</p></a>
+    <a class="mockup-card" href="mockups/3-data-tab.html"><i data-lucide="database"></i><h3>Data Tab</h3><p>Relational database with PiDCTP-linked fields</p></a>
+    <a class="mockup-card" href="mockups/4-styles-tab.html"><i data-lucide="paintbrush"></i><h3>Styles Tab</h3><p>Color/font variables, element styles, live preview</p></a>
+  </div>
+
+  <h2>Documentation</h2>
+  <ul class="docs-list">
+    <li><i data-lucide="component"></i><a href="https://github.com/aybvip/Pi-Visual-Builder/blob/main/docs/1-components.md">Component Specification</a><span>20+ visual components</span></li>
+    <li><i data-lucide="zap"></i><a href="https://github.com/aybvip/Pi-Visual-Builder/blob/main/docs/2-logic-blocks.md">Logic Blocks</a><span>Event, logic, data, Pi SDK blocks</span></li>
+    <li><i data-lucide="code"></i><a href="https://github.com/aybvip/Pi-Visual-Builder/blob/main/docs/3-code-generation.md">Code Generation</a><span>React/TS + HTML/CSS output</span></li>
+    <li><i data-lucide="store"></i><a href="https://github.com/aybvip/Pi-Visual-Builder/blob/main/docs/4-marketplace.md">Component Marketplace</a><span>Publishing, monetization</span></li>
+    <li><i data-lucide="app-window"></i><a href="https://github.com/aybvip/Pi-Visual-Builder/blob/main/docs/5-examples.md">Example Apps</a><span>5 complete app examples</span></li>
+    <li><i data-lucide="layout"></i><a href="https://github.com/aybvip/Pi-Visual-Builder/blob/main/docs/6-editor-ui-layout.md">Editor UI Layout</a><span>Professional editor design</span></li>
+  </ul>
+</div>
+
+<div class="footer">
+  <p>Pi Visual Builder — Original concept by <a href="https://github.com/aybvip">Ayoub Boukadida</a> (@viperco) · Implementation rights for Pi Network</p>
+  <p style="margin-top:8px"><a href="https://github.com/PiNetwork/PiRC/pull/382">PR #382</a> · <a href="https://github.com/PiNetwork/PiRC/issues/381">Issue #381</a> · <a href="https://github.com/aybvip/Pi-Visual-Builder">GitHub Repository</a></p>
+</div>
+
+<script>lucide.createIcons();</script>
+</body>
+</html>
