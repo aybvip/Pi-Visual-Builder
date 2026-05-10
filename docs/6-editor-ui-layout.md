@@ -1,8 +1,8 @@
-# Pi Visual Builder — Editor UI Layout (Bubble.io-Style)
+# Pi Visual Builder — Editor UI Layout
 
 ## Editor Overview
 
-The Pi Visual Builder editor mirrors the professional layout of Bubble.io, adapted for the Pi Browser environment.
+The Pi Visual Builder editor provides a professional, intuitive layout adapted for the Pi Browser environment.
 
 ```
 ┌──────────────────────────────────────────────────────────────────────┐
