@@ -1,8 +1,10 @@
-# Pi Visual Builder — PiRC4: The Ultimate AI-Driven No-Code Platform
+# Pi Visual Builder — PiRC4: The Ultimate AI-Driven No-Code Platform for Pi Network
+
+**Live Demo**: [aybvip.github.io/Pi-Visual-Builder](https://aybvip.github.io/Pi-Visual-Builder/)
 
 ![Pi Visual Builder Preview](assets/preview.png)
 
-> **The Power of Visual Development + The Intelligence of Pi AI** — A next-generation visual development platform with a native **AI Agent (Orchestrator)**. Build complex, relational database web apps with step-by-step visual workflows, all powered by natural language prompts.
+> **The Power of Visual Development + The Intelligence of Pi AI** — A next-generation **no-code platform for Pi Network** with a native **AI Agent (Orchestrator)**. Build Pi apps with drag-and-drop, visual workflows, relational database, and PiDCTP smart contract integration — all powered by natural language prompts. Designed for **Pi App Studio** and **Pi Browser**.
 
 ## 📚 Documentation Index
 
