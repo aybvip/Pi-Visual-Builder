@@ -20,6 +20,7 @@
 | [🎨 Design Tab](mockups/1-design-tab.html) | Visual canvas with elements tree, property editor, and AI assistant |
 | [⚡ Workflow Tab](mockups/2-workflow-tab.html) | Step-by-step logic chains with Pi payment & escrow actions |
 | [🗄️ Data Tab](mockups/3-data-tab.html) | Relational database with PiDCTP-linked fields and privacy rules |
+| [🎭 Styles Tab](mockups/4-styles-tab.html) | Color/font variables, element styles, live preview with dark theme AI |
 
 ## 🤖 The Pi AI Agent (BETA)
 
