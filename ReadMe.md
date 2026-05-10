@@ -110,7 +110,7 @@ Pi Visual Builder turns complex smart contract calls into simple visual steps:
 
 ## 📄 License
 
-MIT License — Developed for the Pi Network Community.
+Pi Network Proprietary License — This project is the exclusive property of Pi Network. No person or entity may claim, copy, or distribute this project without explicit permission from Pi Network. See [LICENSE](LICENSE) for full terms.
 
 ---
 
