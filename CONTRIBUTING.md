@@ -26,16 +26,21 @@ Thank you for your interest in contributing to the Pi Visual Builder specificati
 - Reference PiDCTP module names when applicable
 - Keep language clear and accessible for non-technical Pioneers
 
-## Pull Request Process
-1. Fork the repository
-2. Create a feature branch
-3. Make changes following existing document style
-4. Submit PR with clear description of changes
+## Suggesting Changes
+
+This repository uses a **source-available license** that restricts forking and derivative works, so please propose changes by opening an Issue rather than by sending a pull request:
+
+1. Open an Issue describing the proposed change
+2. Reference the specific document (e.g., "docs/1-components.md: PiCard component")
+3. Provide rationale and any supporting research
+
+Accepted changes are applied to the repository by the maintainer.
 
 ## Reporting Issues
-- **Bugs/Errors**: Open an Issue with the document name and section
-- **Feature Requests**: Open an Issue with use case and rationale
-- **Security vulnerabilities**: Email security@pivisualbuilder.org
+- **Specification errors or gaps**: Open an Issue with the document name and section
+- **Feature requests**: Open an Issue with use case and rationale
+- **Security vulnerabilities**: see [SECURITY.md](SECURITY.md) — do not open a public Issue for a vulnerability
 
 ## License
-By contributing, you agree that your contributions will be licensed under the MIT License.
+
+This repository is published under the **source-available, idea-protection license** in [LICENSE](LICENSE) — it is **not** open source and it is **not** MIT. By contributing you agree that your contribution is submitted under those same terms. Read [LICENSE](LICENSE) before contributing.
